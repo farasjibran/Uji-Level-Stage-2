@@ -59,7 +59,7 @@
     background: white;
 }
 
-.sorot:hover {
+.efek:hover {
     box-shadow: 1px 1px 6px 0px #8F8F8F;
 }
 
@@ -82,7 +82,7 @@
     margin-left: 1150px;
 }
 
-.btn {
+.payment {
     border-radius: 15px;
     margin-left: 355px;
     margin-top: -50px;

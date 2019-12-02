@@ -16,9 +16,9 @@
     <title>Casier APP</title>
 </head>
 
-<body style="background: url('https://cdn.dribbble.com/users/175166/screenshots/5526430/essential_pattern.jpg')">
+<body>
 
-    <!-- Navbar -->
+    <!-- Navigasi -->
     <nav style="background: #FF294C" class="navbar navbar-light">
         <span class="navbar-brand mb-0 mr h1 text-light"><b>SOCIALINC</b></span>
         <span class="text-white name"></span>
@@ -30,20 +30,20 @@
         <!-- Sidebar -->
         <div class="col-lg-4 pl-0" id="sidebar-wrapper">
 
-            <!-- Keranjang -->
+            <!-- Cart -->
             <div class="cart pb-3 mt-4 pt-4 ml-3">
                 <div class="text-center mb-3">
                     <img src="img/Icon awesome-shopping-cart.png" alt="">
                 </div>
 
-                <!-- Item Keranjang -->
+                <!-- Item Cart -->
                 <div id="orderHolder" class="cart-item">
 
-                    <!-- Place holder cart -->
+                    <!-- Place holder -->
                 </div>
             </div>
 
-            <!-- Detail Pembayaran -->
+            <!-- Detail payment -->
             <div class="detail ml-3">
                 <table border="0" cellpadding=10 class="payment-detail">
                     <tr>
@@ -54,15 +54,16 @@
                         <td colspan="2">Total : Rp <span id='total'> 0</span> </td>
                     </tr>
                 </table>
-                <button type="button" class="btn btn-success"><img src="img/Icon awesome-print.png" alt=""
-                        style="width: 20px;"> Payment</button>
+                <button type="button" class="btn btn-success payment" data-toggle="modal"
+                    data-target="#exampleModal"><img src="img/Icon awesome-print.png" alt="" style="width: 20px;">
+                    Payment</button>
             </div>
         </div>
 
-        <!-- Content -->
+        <!-- Detail item -->
         <div id="page-content-wrapper">
 
-            <!-- Menu bar -->
+            <!-- Menu -->
             <div class="menu mt-4 p-3 pt-4">
                 <div class="row">
                     <div class="col-sm-12 text-center">
@@ -70,10 +71,11 @@
                     </div>
                 </div>
 
-                <!-- Menu Item -->
+                <!-- Menu item -->
                 <div class="menu-item">
                     <div>
-                        <!-- List Coffe -->
+
+                        <!-- List menu-->
                         <div id="menuHolder" class="row p-2">
                         </div>
                     </div>
@@ -82,6 +84,30 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- Modal payment -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Struk Pembelian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="Input Uang">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Bayar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
