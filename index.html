@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Casier APP</title>
+</head>
+
+<body style="background: url('https://cdn.dribbble.com/users/175166/screenshots/5526430/essential_pattern.jpg')">
+
+    <!-- Navbar -->
+    <nav style="background: #FF294C" class="navbar navbar-light">
+        <span class="navbar-brand mb-0 mr h1 text-light"><b>SOCIALINC</b></span>
+        <span class="text-white name"></span>
+        <span><img src="img/Group 2.png" alt="" class="person"></span>
+    </nav>
+
+    <div class="d-flex container-fluid pl-0">
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 pl-0" id="sidebar-wrapper">
+
+            <!-- Keranjang -->
+            <div class="cart pb-3 mt-4 pt-4 ml-3">
+                <div class="text-center mb-3">
+                    <img src="img/Icon awesome-shopping-cart.png" alt="">
+                </div>
+
+                <!-- Item Keranjang -->
+                <div id="orderHolder" class="cart-item">
+
+                    <!-- Place holder cart -->
+                </div>
+            </div>
+
+            <!-- Detail Pembayaran -->
+            <div class="detail ml-3">
+                <table border="0" cellpadding=10 class="payment-detail">
+                    <tr>
+                        <td>Sub Total : Rp <span id="subTotal">0</span></td>
+                        <td>Tax : Rp <span id="tax">0</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Total : Rp <span id='total'> 0</span> </td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-success"><img src="img/Icon awesome-print.png" alt=""
+                        style="width: 20px;"> Payment</button>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div id="page-content-wrapper">
+
+            <!-- Menu bar -->
+            <div class="menu mt-4 p-3 pt-4">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <img src="img/Icon material-restaurant-menu.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div>
+                        <!-- List Coffe -->
+                        <div id="menuHolder" class="row p-2">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- My Script -->
+    <script src="script/script.js"></script>
+</body>
+
+</html>
