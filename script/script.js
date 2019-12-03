@@ -68,6 +68,18 @@ let menuItem = [
         "harga": 13000,
         "gambar_item": "https://kurio-img.kurioapps.com/18/05/17/a6be5fb91b7dfcc1d058117a22ecc788.jpeg"
     },
+    {
+        "Kategori": "MakananRingan",
+        "nama_item": "Pancong Keju",
+        "harga": 12000,
+        "gambar_item": "https://media.travelingyuk.com/wp-content/uploads/2018/07/Kue-Pancong-Rawa-Belong.jpg"
+    },
+    {
+        "Kategori": "MakananRingan",
+        "nama_item": "Waffle + Ice cream",
+        "harga": 19000,
+        "gambar_item": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/11/27/DV2907_BBB%20Bacon-in-the-Batter-Buttermilk-Waffle-Bourbon-Ice-Cream-Bacon-Toffee_s4x3.jpg.rend.hgtvcom.826.620.suffix/1543329865056.jpeg"
+    },
 
     // List minuman
     {
