@@ -1,6 +1,12 @@
+// Jquery document ready
+$(document).ready(function () {
+    loopMenu()
+});
+
+
 // Input nama yang menjaga kasir
-var name = prompt('your name')
-$('.name').text(name)
+var name = prompt('Enter Your Name')
+$('.account').text(name)
 
 // Holder
 const menuHolder = document.getElementById("menuHolder")
@@ -9,114 +15,150 @@ const orderHolder = document.getElementById("orderHolder")
 let orderItem = []
 
 // Item menu di dalam array
-let menuItem = [{
-        "nama_item": "French fries",
-        "harga": 12000,
-        "gambar_item": "https://craftlog.com/m/i/5213567=s1280=h960"
-    },
+let menuItem = [
+    // List makanan berat
     {
-        "nama_item": "Iced tea",
-        "harga": 7000,
-        "gambar_item": "https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-Iced-Tea.jpg"
-    },
-    {
-        "nama_item": "Fried rice",
+        "Kategori": "MakananBerat",
+        "nama_item": "Nasi goreng",
         "harga": 15000,
         "gambar_item": "https://doyanresep.com/wp-content/uploads/2018/12/cara-membuat-nasi-goreng-telur.jpg"
     },
     {
-        "nama_item": "Roti bakar",
-        "harga": 9000,
-        "gambar_item": "https://selerasa.com/wp-content/uploads/2018/12/roti-bakar-sederhana.jpg"
-    },
-    {
+        "Kategori": "MakananBerat",
         "nama_item": "Mie goreng",
         "harga": 5000,
         "gambar_item": "http://www.dapurkobe.co.id/wp-content/uploads/mie-goreng-saus-tiram.jpg"
     },
     {
+        "Kategori": "MakananBerat",
         "nama_item": "Mie rebus",
         "harga": 6000,
-        "gambar_item": "https://cdn2.tstatic.net/manado/foto/bank/images/mie_20180331_140834.jpg"
+        "gambar_item": "https://kepotek.com/wp-content/uploads/2019/04/4-Resep-Mie-Kuah-Enak-Dan-Murah-696x471.jpg"
     },
     {
+        "Kategori": "MakananBerat",
+        "nama_item": "Ayam bakar",
+        "harga": 26000,
+        "gambar_item": "https://doyanresep.com/wp-content/uploads/2018/12/cara-membuat-ayam-bakar-kecap.jpg"
+    },
+    {
+        "Kategori": "MakananBerat",
+        "nama_item": "Ayam geprek",
+        "harga": 20000,
+        "gambar_item": "https://cdn-brilio-net.akamaized.net/news/2019/10/07/171868/1107923-10-resep-ayam-geprek-crispy-enak.jpg"
+    },
+
+
+    // List makanan ringan
+    {
+        "Kategori": "MakananRingan",
+        "nama_item": "Roti bakar",
+        "harga": 9000,
+        "gambar_item": "https://selerasa.com/wp-content/uploads/2018/12/roti-bakar-sederhana.jpg"
+    },
+    {
+        "Kategori": "MakananRingan",
+        "nama_item": "Kentang goreng",
+        "harga": 12000,
+        "gambar_item": "https://craftlog.com/m/i/5213567=s1280=h960"
+    },
+    {
+        "Kategori": "MakananRingan",
+        "nama_item": "Martabak mie",
+        "harga": 13000,
+        "gambar_item": "https://kurio-img.kurioapps.com/18/05/17/a6be5fb91b7dfcc1d058117a22ecc788.jpeg"
+    },
+
+    // List minuman
+    {
+        "Kategori": "Minuman",
         "nama_item": "Thai tea",
         "harga": 12000,
         "gambar_item": "https://s1.bukalapak.com/img/13012854901/w-1000/Bubuk_minuman_bubuk_thai_tea___Bubble_drink_ice_blended_milk.jpg"
     },
     {
-        "nama_item": "Ice Cream",
+        "Kategori": "Minuman",
+        "nama_item": "Iced tea",
+        "harga": 7000,
+        "gambar_item": "https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-Iced-Tea.jpg"
+    },
+
+    // List Dessert
+    {
+        "Kategori": "Dessert",
+        "nama_item": "Ice cream",
         "harga": 9000,
         "gambar_item": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/5/17/0/WU2207_Mermaid-Ice-Cream_s4x3.jpg.rend.hgtvcom.826.620.suffix/1558112854371.jpeg"
     },
 ]
 
-
-// Getter And Setter
-class Order {
-    constructor(nama_item, harga, gambar_item, kelipatan) {
-        this._nama_item = nama_item
-        this._harga = harga
-        this._gambar_item = gambar_item
-        this._kelipatan = kelipatan
-    }
-
-    get getnama() {
-        return this._nama_item
-    }
-
-    get getharga() {
-        return this._harga
-    }
-
-    get getgambar() {
-        return this._gambar_item
-    }
-    get getkelipatan() {
-        return this._kelipatan
-    }
-
-    set setnama(nama_item) {
-        this._nama_item = nama_item
-    }
-
-    set setharga(harga) {
-        this._harga = harga
-    }
-
-    set setgambar(gambar_item) {
-        this._gambar_item = gambar_item
-    }
-    set setkelipatan(kelipatan) {
-        this._kelipatan = kelipatan
-    }
+// Loop Kategori
+function loopMenu(Kategori) {
+    $('#mknberatHolder').html("")
+    $('#mknringanHolder').html("")
+    $('#minumanHolder').html("")
+    $('#dessertHolder').html("")
+    menuItem.forEach(obj => {
+        console.log("foreach started")
+        Object.entries(obj)
+        const data = `'${obj["nama_item"]}', '${obj["harga"]}', '${obj["gambar_item"]}'`
+        if (Kategori != null) {
+            console.log(Kategori)
+            // List Item
+            if (obj["Kategori"] == "MakananBerat" && Kategori == "MakananBerat") {
+                const mknBeratBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#mknberatHolder").append(mknBeratBind)
+            } else if (obj["Kategori"] == "MakananRingan" && Kategori == "MakananRingan") {
+                const mknRinganBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#mknringanHolder").append(mknRinganBind)
+            } else if (obj["Kategori"] == "Minuman" && Kategori == "Minuman") {
+                const minumanBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#minumanHolder").append(minumanBind)
+            } else if (obj["Kategori"] == "Dessert" && Kategori == "Dessert") {
+                const dessertBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#dessertHolder").append(dessertBind)
+            }
+        } else {
+            if (obj["Kategori"] == "MakananBerat") {
+                const mknBeratBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#mknberatHolder").append(mknBeratBind)
+            } else if (obj["Kategori"] == "MakananRingan") {
+                const mknRinganBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#mknringanHolder").append(mknRinganBind)
+            } else if (obj["Kategori"] == "Minuman") {
+                const minumanBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#minumanHolder").append(minumanBind)
+            } else if (obj["Kategori"] == "Dessert") {
+                const dessertBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
+                $("#dessertHolder").append(dessertBind)
+            }
+        }
+    });
 }
 
-menuItem.forEach(obj => {
-    console.log("foreach started")
-    Object.entries(obj)
-    const data = `'${obj["nama_item"]}', '${obj["harga"]}', '${obj["gambar_item"]}'`
-    const bindHolder = '<div onclick="MenuClicked(' + data + ')" class="card-group efek col-md-3 p-3"> <div class="card text-center" style="border: none"> <div class="text-center"> <img style="width: 130px; height:130px; border-radius: 100%" src="' + obj["gambar_item"] + '" class="card-img-top" alt=""> </div> <div class="card-body p-0 pt-2"> <h4 class="mb-1 card-title">' + obj["nama_item"] + '</h4> </div> <div class="card-body text-secondary p-0"> <p class=" card-title">Rp <span>' + obj["harga"] + '</span></p> </div> </div> </div>'
-    $("#menuHolder").append(bindHolder)
-});
+// Fuction Holder
+function ItemHolder(data, nama_item, harga, gambar_item) {
+    const ItemHolder = `<div onclick="MenuClicked(${data})" class="card-group sorot col-md-3 p-3"> <div class="card text-center" style="border: none"> <div class="text-center"> <img style="width: 130px; height:130px; border-radius: 100%" src="${gambar_item}" class="card-img-top" alt=""> </div> <div class="card-body p-0 pt-2"> <h4 class="mb-1 card-title">${nama_item}</h4> </div> <div class="card-body text-secondary p-0"> <p class=" card-title">Rp <span>${harga}</span></p> </div> </div> </div>`
+    return ItemHolder;
+}
 
 function MenuClicked(nama_item, harga, gambar_item) {
     console.log("menu start")
     for (let i = 0; i < orderItem.length; i++) {
-        if (orderItem[i].getnama == nama_item) {
-            orderItem[i].setkelipatan = 1 + orderItem[i].getkelipatan
+        if (orderItem[i]["nama_item"] == nama) {
+            orderItem[i]["qty"] += 1
             LoopOrder()
             return
         }
     }
 
-    let order = new Order
-    order.setnama = nama_item
-    order.setgambar = gambar_item
-    order.setharga = harga
-    order.setkelipatan = 1
+    let order = {
+        "nama_item": nama_item,
+        "harga": harga,
+        "gambar_item": gambar_item,
+        "qty": 1,
+    }
     orderItem.push(order)
-
     LoopOrder()
 }
 

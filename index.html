@@ -13,15 +13,19 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- My Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
     <title>Casier APP</title>
 </head>
 
 <body>
 
     <!-- Navigasi -->
-    <nav style="background: #FF294C" class="navbar navbar-light">
+    <nav class="navbar navbar-light">
         <span class="navbar-brand mb-0 mr h1 text-light"><b>SOCIALINC</b></span>
-        <span class="text-white name"></span>
+        <!-- Place holder nama pengguna -->
+        <span class="text-white account"></span>
         <span><img src="img/Group 2.png" alt="" class="person"></span>
     </nav>
 
@@ -72,18 +76,47 @@
                 </div>
 
                 <!-- Menu item -->
-                <div class="menu-item">
+                <div id="menuHolder" class="menu-item p-3">
+
                     <div>
-
-                        <!-- List menu-->
-                        <div id="menuHolder" class="row p-2">
+                        <!-- List makanan berat -->
+                        <div>
+                            <h2 class="pl-4"><b>Makanan Berat</b></h2>
+                            <div id="mknberatHolder" class="row p-2 pl-4 pr-4">
+                                <!-- Placeholder -->
+                            </div>
                         </div>
-                    </div>
 
+                        <!-- List makanan ringan -->
+                        <div>
+                            <h2 class="pl-4"><b>Makanan Ringan</b></h2>
+                            <div id="mknringanHolder" class="row p-2 pl-4 pr-4">
+                                <!-- Placeholder -->
+                            </div>
+                        </div>
+
+                        <!-- List minuman -->
+                        <div>
+                            <h2 class="pl-4"><b>Minuman</b></h2>
+                            <div id="minumanHolder" class="row p-2 pl-4 pr-4">
+                                <!-- Placeholder -->
+                            </div>
+                        </div>
+
+                        <!-- List dessert -->
+                        <div>
+                            <h2 class="pl-4"><b>Dessert</b></h2>
+                            <div id="dessertHolder" class="row p-2 pl-4 pr-4">
+                                <!-- Placeholder -->
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
 
+    </div>
     </div>
 
     <!-- Modal payment -->
