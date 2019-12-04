@@ -99,6 +99,18 @@ let menuItem = [
         "harga": 12000,
         "gambar_item": "https://majalah.ottencoffee.co.id/wp-content/uploads/2015/07/shutterstock_223511062.jpg"
     },
+    {
+        "Kategori": "Minuman",
+        "nama_item": "Ice leci",
+        "harga": 10000,
+        "gambar_item": "https://img-global.cpcdn.com/recipes/a12f3af908abbb2c/751x532cq70/es-leci-kelapa-muda-foto-resep-utama.jpg"
+    },
+    {
+        "Kategori": "Minuman",
+        "nama_item": "Ice tarro latte",
+        "harga": 14000,
+        "gambar_item": "https://ds393qgzrxwzn.cloudfront.net/resize/m720x480/cat1/img/images/0/Qy2I1SLCxk.jpg"
+    },
 
     // List Dessert
     {
