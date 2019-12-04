@@ -42,8 +42,7 @@
                 </div>
 
                 <!-- Item Cart -->
-                <div id="orderHolder" class="cart-item">
-
+                <div id="orderanHolder" class="cart-item">
                     <!-- Place holder -->
                 </div>
             </div>
@@ -59,8 +58,10 @@
                         <td colspan="2">Total : Rp <span id='total'> 0</span> </td>
                     </tr>
                 </table>
-                <button type="button" class="btn btn-success payment" data-toggle="modal"
-                    data-target="#exampleModal"><img src="img/Icon awesome-print.png" alt="" style="width: 20px;">
+                <!-- Button bayar -->
+                <button type="button" id="btnpayment" class="btn btn-success payment" data-toggle="modal"
+                    data-target="#exampleModalScrollable" aria-haspopup="true" aria-expanded="false"><img
+                        src="img/Icon awesome-print.png" alt="" style="width: 20px;">
                     Payment</button>
             </div>
         </div>
@@ -97,7 +98,14 @@
 
                         <!-- List makanan ringan -->
                         <div>
-                            <h2 class="pl-4"><b>Makanan Ringan</b></h2>
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="pl-4"><b>Makanan Ringan</b></h2>
+                                </div>
+                                <div class="col" style="margin-left: -40%; margin-top: 5px">
+                                    <hr style="border: 1px solid black;">
+                                </div>
+                            </div>
                             <div id="mknringanHolder" class="row p-2 pl-4 pr-4">
                                 <!-- Placeholder -->
                             </div>
@@ -105,7 +113,14 @@
 
                         <!-- List minuman -->
                         <div>
-                            <h2 class="pl-4"><b>Minuman</b></h2>
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="pl-4"><b>Minuman</b></h2>
+                                </div>
+                                <div class="col" style="margin-left: -60%; margin-top: 5px">
+                                    <hr style="border: 1px solid black;">
+                                </div>
+                            </div>
                             <div id="minumanHolder" class="row p-2 pl-4 pr-4">
                                 <!-- Placeholder -->
                             </div>
@@ -113,7 +128,14 @@
 
                         <!-- List dessert -->
                         <div>
-                            <h2 class="pl-4"><b>Dessert</b></h2>
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="pl-4"><b>Dessert</b></h2>
+                                </div>
+                                <div class="col" style="margin-left: -65%; margin-top: 5px">
+                                    <hr style="border: 1px solid black;">
+                                </div>
+                            </div>
                             <div id="dessertHolder" class="row p-2 pl-4 pr-4">
                                 <!-- Placeholder -->
                             </div>
@@ -130,22 +152,35 @@
     <!-- Modal payment -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Struk Pembelian</h5>
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Struk Pembelian</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <input type="text" placeholder="Input Uang">
+                <!-- Payment holder -->
+                <div id="paymentHolder" class="modal-body">
+                </div>
+                <div style="display:inline-block; text-align:end" class="modal-footer">
+                    <div class="d-flex">
+                        <div class="col-sm" style="text-align: start;">
+                            <h6 class="mr-0">Cashier : <span class="account carshier"></span> </h6>
+                            <h6 class="mr-0">Status : Dine In</h6>
+                        </div>
+                        <div class="col-sm" style="text-align: end;">
+                            <h6 class="mr-0">Subtotal : Rp <span id="TotalSub"></span></h6>
+                            <h6 class="mr-0">Tax : Rp <span id="Denda"></span></h6>
+                            <h6 class="mr-0">Total : Rp <span id="Total"></span></h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Bayar</button>
+                    <input type="number" min="1" placeholder="Masukkan Uang">
+                    <button type="button" id="btnBayar" class="btn-lg btn-success">Bayar</button>
                 </div>
             </div>
         </div>
