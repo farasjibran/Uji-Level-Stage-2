@@ -3,10 +3,9 @@ $(document).ready(function () {
     LoopMenu()
 });
 
-
-// Input nama yang menjaga kasir
+// Input nama penjaga kasir
 var name = prompt('Enter Your Name')
-$('.account').text(name)
+$('.guard').text(name)
 
 // Holder
 const menuHolder = document.getElementById("menuHolder")
@@ -135,10 +134,7 @@ let menuItem = [
 
 // Loop Kategori
 function LoopMenu(Kategori) {
-    $('#mknberatHolder').html("")
-    $('#mknringanHolder').html("")
-    $('#minumanHolder').html("")
-    $('#dessertHolder').html("")
+    $('#menuHolder').html("")
     menuItem.forEach(obj => {
         console.log("foreach started")
         Object.entries(obj)
@@ -148,30 +144,30 @@ function LoopMenu(Kategori) {
             // List Item
             if (obj["Kategori"] == "MakananBerat" && Kategori == "MakananBerat") {
                 const mknBeratBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#mknberatHolder").append(mknBeratBind)
+                $("#menuHolder").append(mknBeratBind)
             } else if (obj["Kategori"] == "MakananRingan" && Kategori == "MakananRingan") {
                 const mknRinganBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#mknringanHolder").append(mknRinganBind)
+                $("#menuHolder").append(mknRinganBind)
             } else if (obj["Kategori"] == "Minuman" && Kategori == "Minuman") {
                 const minumanBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#minumanHolder").append(minumanBind)
+                $("#menuHolder").append(minumanBind)
             } else if (obj["Kategori"] == "Dessert" && Kategori == "Dessert") {
                 const dessertBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#dessertHolder").append(dessertBind)
+                $("#menuHolder").append(dessertBind)
             }
         } else {
             if (obj["Kategori"] == "MakananBerat") {
                 const mknBeratBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#mknberatHolder").append(mknBeratBind)
+                $("#menuHolder").append(mknBeratBind)
             } else if (obj["Kategori"] == "MakananRingan") {
                 const mknRinganBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#mknringanHolder").append(mknRinganBind)
+                $("#menuHolder").append(mknRinganBind)
             } else if (obj["Kategori"] == "Minuman") {
                 const minumanBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#minumanHolder").append(minumanBind)
+                $("#menuHolder").append(minumanBind)
             } else if (obj["Kategori"] == "Dessert") {
                 const dessertBind = ItemHolder(data, obj["nama_item"], obj["harga"], obj["gambar_item"])
-                $("#dessertHolder").append(dessertBind)
+                $("#menuHolder").append(dessertBind)
             }
         }
     });
@@ -179,7 +175,13 @@ function LoopMenu(Kategori) {
 
 // Fuction Holder
 function ItemHolder(data, nama_item, harga, gambar_item) {
-    const itemHolder = `<div onclick="MenuClicked(${data})" class="card-group efek col-md-3 p-3"> <div class="card text-center" style="border: none"> <div class="text-center"> <img style="width: 130px; height:130px; border-radius: 100%" src="${gambar_item}" class="card-img-top" alt=""> </div> <div class="card-body p-0 pt-2"> <h4 class="mb-1 card-title">${nama_item}</h4> </div> <div class="card-body text-secondary p-0"> <p class=" card-title">Rp <span>${harga}</span></p> </div> </div> </div>`
+    const itemHolder = ` <div onclick="MenuClicked(${data})" class="col-md-2 card mb-2 mr-2" style="height: 13rem;">
+    <img src="${gambar_item}" class="card-img-top" alt="..." style="height: 120px; margin-bottom: -10px">
+    <div class="card-body text-center">
+        <h5 class="card-title mb-0"><b>${nama_item}</b></h5>
+        <p class="card-text">Rp. ${harga}</p>
+    </div>
+</div>`
     return itemHolder;
 }
 
@@ -208,18 +210,20 @@ function LoopOrder() {
     $('#orderanHolder').html("")
     for (let i = 0; i < orderItem.length; i++) {
         const itemHolder = `
-       <div class="media p-2 mb-1"> 
-        <img src="${orderItem[i]["gambar_item"]}" class="mr-2" alt="..." style="width: 100px; border-radius: 100%; height: 100px"> 
-        <div class="media-body"> 
-        <h5 class="mt-0 mb-0">${orderItem[i]["nama_item"]}</h5> 
-        <p style="margin: 0">Rp <span>${orderItem[i]["harga"]}</span></p> <span class="badge badge-success">x${orderItem[i]["kelipatan"]}</span> 
-        </div> 
-        <div> <br> 
-        <h5 class="mb-0 mr-1">Rp <span>${(orderItem[i]["harga"] * orderItem[i]["kelipatan"])}</span></h5> 
-        </div> 
-        <div class="destroy"> 
-            <img src="img/Icon ionic-ios-close-circle.png" class="mr-3" alt="..." style="width: 20px"> 
-        </div> </div>`
+        <div class="media p-2 mb-1">
+        <div class="media-body">
+            <h5 class="mt-0 mb-2"><b>${orderItem[i]["nama_item"]}</b></h5>
+            <p style="margin: 0"><span>Unit Price : Rp. </span>${orderItem[i]["harga"]}<span></span></p>
+        </div>
+        <div>
+            <h5 class="mb-1">Rp ${(orderItem[i]["harga"] * orderItem[i]["kelipatan"])}</h5>
+            <p class="mb-0 mr-1">Quantity : ${orderItem[i]["kelipatan"]}</p>
+        </div>
+        <div class="destroy">
+            <img src="asset/img/Icon awesome-trash-alt.png" class="ml-3 mt-2" alt="..."
+                style="width: 25px">
+        </div>
+    </div>`
         $("#orderanHolder").append(itemHolder);
     }
     Counting()
@@ -276,5 +280,11 @@ $("#btnpayment").click(function () {
 
 $("#btnBayar").on('click', function () {
     alert("Terimakasih telah membeli")
-    location.reload()
+    orderItem = []
+    LoopOrder()
 })
+
+function removeOrder() {
+    orderItem = []
+    LoopOrder()
+}
