@@ -215,7 +215,7 @@ function LoopOrder() {
         <p style="margin: 0">Rp <span>${orderItem[i]["harga"]}</span></p> <span class="badge badge-success">x${orderItem[i]["kelipatan"]}</span> 
         </div> 
         <div> <br> 
-        <h5 class="mb-0 mr-1">Rp <span id="totalQty">${(orderItem[i]["harga"] * orderItem[i]["kelipatan"])}</span></h5> 
+        <h5 class="mb-0 mr-1">Rp <span>${(orderItem[i]["harga"] * orderItem[i]["kelipatan"])}</span></h5> 
         </div> 
         <div class="destroy"> 
             <img src="img/Icon ionic-ios-close-circle.png" class="mr-3" alt="..." style="width: 20px"> 
