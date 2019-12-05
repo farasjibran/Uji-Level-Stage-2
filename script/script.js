@@ -31,13 +31,13 @@ let menuItem = [
     {
         "Kategori": "MakananBerat",
         "nama_item": "Mie goreng",
-        "harga": 5000,
+        "harga": 10000,
         "gambar_item": "http://www.dapurkobe.co.id/wp-content/uploads/mie-goreng-saus-tiram.jpg"
     },
     {
         "Kategori": "MakananBerat",
         "nama_item": "Mie rebus",
-        "harga": 6000,
+        "harga": 10000,
         "gambar_item": "https://kepotek.com/wp-content/uploads/2019/04/4-Resep-Mie-Kuah-Enak-Dan-Murah-696x471.jpg"
     },
     {
