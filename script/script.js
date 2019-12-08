@@ -217,7 +217,7 @@ function LoopOrder() {
         </div>
         <div>
             <h5 class="mb-1">Rp ${(orderItem[i]["harga"] * orderItem[i]["kelipatan"])}</h5>
-            <p class="mb-0 mr-1">Quantity : ${orderItem[i]["kelipatan"]}</p>
+            <p class="mb-0 mr-1">Quantity : <span><input class="quantity mt-3" id="quantity" type="number" value="${Number(orderItem[i]["kelipatan"])}"></span> </p>
         </div>
         <div class="destroy">
             <img src="asset/img/Icon awesome-trash-alt.png" class="ml-3 mt-2" alt="..."
@@ -230,6 +230,16 @@ function LoopOrder() {
     OnDelete();
 }
 
+// Fuction Quantity
+$('#orderanHolder').on('change', '.quantity', function () {
+    console.log("Item Clicked")
+    for (let i = 0; i < orderItem.length; i++) {
+        const element = array[i];
+        
+    }
+})
+
+// Function Delete
 function OnDelete() {
     for (let position = 0; position < $(".destroy").length; position++) {
         $(`.destroy:eq(${position})`).on('click', function () {
@@ -239,6 +249,7 @@ function OnDelete() {
     }
 }
 
+// Function Counting
 function Counting() {
     if (orderItem.length >= 1) {
         subTotal = 0
@@ -259,6 +270,7 @@ function Counting() {
     }
 };
 
+// Fuction for Button Payment if Clicked
 $("#btnpayment").click(function () {
     console.log("payment : Clicked")
     $("#paymentHolder").html("")
@@ -278,12 +290,14 @@ $("#btnpayment").click(function () {
     $("#Total").text(totalHasil)
 })
 
+// Function for Button Buy if Clicked 
 $("#btnBayar").on('click', function () {
     alert("Terimakasih telah membeli")
     orderItem = []
     LoopOrder()
 })
 
+// Function for Button Remove all Order if Clicked
 function removeOrder() {
     orderItem = []
     LoopOrder()

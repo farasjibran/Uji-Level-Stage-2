@@ -133,3 +133,7 @@
 .bungkusitem {
     padding-left: 15px;
 }
+
+.quantity {
+    width: 40px;
+}
