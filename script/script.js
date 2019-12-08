@@ -11,7 +11,7 @@ $('.guard').text(name)
 const menuHolder = document.getElementById("menuHolder")
 const orderanHolder = document.getElementById("orderanHolder")
 
-// let untuk menghitung hasil
+// variable untuk menghitung hasil
 let subTotal = 0
 let totalHasil = 0
 let tax = 0
